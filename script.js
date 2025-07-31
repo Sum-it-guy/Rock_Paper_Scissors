@@ -22,4 +22,17 @@ function getComputerChoice(){
 }
 
 
+//get human Choices
+
+function getHumanChoice(){
+    let choice = prompt("Enter a choice between\n1. rock\n2. paper\n3. scissors\n","");
+    return choice;
+
+    //checked
+    
+}
+
+
+
+
 
