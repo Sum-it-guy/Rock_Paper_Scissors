@@ -42,8 +42,7 @@ function getHumanChoice(){
 
 //game logic for only one round for now
 
-const Computer = getComputerChoice();
-const human = getHumanChoice();
+
 
 function playGround(Computer,human){
     //converting user input to lowercase
@@ -71,12 +70,34 @@ function playGround(Computer,human){
     
     }
 
-    console.log(`The Scores are\nHuman Score - ${humanScore}\n Computer Score - ${computerScore}`);
+    console.log(`The Scores are\nHuman Score - ${humanScore}\nComputer Score - ${computerScore}`);
 
 }
 
 
-//calling play function
-playGround(Computer,human);
+function playGame(){
 
+    for(let i = 1;i<5;i++){
+        const Computer = getComputerChoice();
+        const human = getHumanChoice();
+
+        playGround(Computer,human);
+    }
+
+    if(computerScore > humanScore){
+        console.log("Computer's Win");
+    }
+
+    else if(computerScore == humanScore){
+        console.log("Tie");
+    }
+
+    else{
+        console.log("You wins by")
+    }
+   
+}
+
+
+playGame();
 
