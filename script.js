@@ -1,3 +1,10 @@
+//global variable to keep track of scores of human and computer
+ 
+let humanScore = 0;
+let computerScore = 0;
+
+
+
 
 //get Computer Choice 
 function getComputerChoice(){
@@ -33,6 +40,43 @@ function getHumanChoice(){
 }
 
 
+//game logic for only one round for now
 
+const Computer = getComputerChoice();
+const human = getHumanChoice();
+
+function playGround(Computer,human){
+    //converting user input to lowercase
+    const Human = human.toLowerCase();
+
+    if(Computer == Human){
+        humanScore++;
+        computerScore++;
+        console.log(`Your ${Human} tied with Computers ${Computer}!\nTry Again`);
+    }
+
+    else if((Computer == "rock" && Human == "paper" )||
+            (Computer == "paper" && Human == "scissors")||
+            (Computer == "scissors" && Human == "rock")
+    )
+    
+    {
+        humanScore++;
+        console.log(`You win your ${Human} beat Computers ${Computer}`);
+    }
+
+    else{
+        computerScore++;
+        console.log(`You loose your ${Human} looses to Computers ${Computer}`);
+    
+    }
+
+    console.log(`The Scores are\nHuman Score - ${humanScore}\n Computer Score - ${computerScore}`);
+
+}
+
+
+//calling play function
+playGround(Computer,human);
 
 
