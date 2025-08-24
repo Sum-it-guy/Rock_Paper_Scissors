@@ -1,5 +1,6 @@
 //global variable to keep track of scores of human and computer
  
+
 let humanScore = 0;
 let computerScore = 0;
 
