@@ -42,6 +42,10 @@ html,body{
     text-align: center;
     font-size:100px;
 }
+.y_choice,.c_choice{
+    text-align: center;
+    font-size: 60px;
+}
 
 /*choices*/
  
