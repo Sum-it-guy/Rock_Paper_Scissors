@@ -1,6 +1,7 @@
-body{
+html,body{
     display: flex;
     flex-direction: column;
+    height: 100%;
     margin:0;
 }
 /*header*/
@@ -17,20 +18,28 @@ body{
 
 /*main body*/
  /*score board*/
+ #container{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+ }
 
 #score_board{
     display: flex;
     padding:20px;
-    justify-content: space-around;
+    justify-content: center;
+    gap:230px;
    
 }
 
 .y,.c{
+    text-align: center;
     font-size: 40px;
     font-weight: 300;
 }
 
 .your_score,.computer_score{
+    text-align: center;
     font-size:100px;
 }
 
@@ -38,8 +47,9 @@ body{
  
 #choices{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding:40px;
+    gap:120px;
 }
 
 #choices button{
@@ -49,6 +59,7 @@ body{
 /*start*/
 
 #start{
+    margin-top:30px;
     display: flex;
     justify-content: center;
     padding:30px;
@@ -60,9 +71,17 @@ body{
     margin-bottom: auto;
 }
 
+/*footer*/
+#footer{
+    margin-top: auto;
+    display:flex;
+    justify-content: center;
+    padding:10px;
+    margin-bottom:20px;
+}
 
-footer{
-    margin-bottom: auto;
+#footer div{
+    font-size:30px;
 }
 
 
