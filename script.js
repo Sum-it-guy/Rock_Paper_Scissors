@@ -8,11 +8,11 @@ const start_btn = document.querySelector(".start_btn");
 const y_choice = document.querySelector(".y_choice");
 const c_choice = document.querySelector(".c_choice");
 
+
 //logic of getting computer choices
 
 function getComputerChoices(){
     let value = Math.floor(Math.random()*3);
-    console.log(value);
 
     if(value == 0){
         c_choice.textContent ="Rock";
@@ -27,7 +27,18 @@ function getComputerChoices(){
     }
 }
 
-start_btn.addEventListener("click",getComputerChoices);
+//getting human choices 
+
+function get_human_choices(){
+     rock.addEventListener("click",()=>y_choice.textContent = "Rock");
+     paper.addEventListener("click",()=>y_choice.textContent = "Paper");
+     scissors.addEventListener("click",()=>y_choice.textContent = "Scissors");
+}
+
+
+
+
+
 
 
 

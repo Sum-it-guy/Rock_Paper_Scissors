@@ -28,8 +28,12 @@ html,body{
     display: flex;
     padding:20px;
     justify-content: center;
-    gap:230px;
+    gap:300px;
    
+}
+
+#you,#computer {
+    max-width: 200px;
 }
 
 .y,.c{
