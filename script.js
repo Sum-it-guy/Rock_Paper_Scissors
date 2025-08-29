@@ -7,6 +7,10 @@ const scissors = document.querySelector(".scissors");
 const start_btn = document.querySelector(".start_btn");
 const y_choice = document.querySelector(".y_choice");
 const c_choice = document.querySelector(".c_choice");
+const instruction = document.querySelector(".instruction div");
+const choices = document.querySelector("#choices");
+const div_choice = document.querySelector(".div_choice");
+
 
 //setting up global values 
 let playerScore = 0;
@@ -42,6 +46,7 @@ function get_human_choices(){
                                         });
      paper.addEventListener("click",()=>{y_choice.textContent = "Paper";
                                         human_choice =  "paper";
+                                      
      });
      scissors.addEventListener("click",()=>{y_choice.textContent = "Scissors";
                                         human_choice = "scissors";
@@ -83,15 +88,51 @@ function play(human,computer){
         playerScore++;
     }
 
+    
+
     your_score.textContent =playerScore;
     computer_score.textContent = ComputerScore;
 
 }
 
-start_btn.addEventListener("click",()=>{
-    let co = getComputerChoices();
-    play(human_choice,co);
-});
+
+/*playing five round function*/
+
+function play_round(){
+
+    for(let i = 1;i<= 5;i++){
+       play(human_choice,getComputerChoices);
+    }
+
+    if(playerScore > ComputerScore){
+        instruction.textContent = "Congratulation \n You Win!";
+    }
+
+    else if(playerScore < ComputerScore){
+        instruction.textContent = "Oops \n You lost!"
+    }
+
+    else{
+        instruction.textContent = "Tie-Breaker";
+    }
+}
+
+/*start button : starting the game*/
+   //toggeling classes
+
+   start_btn.addEventListener("click",()=>{
+      choices.classList.remove("div_choice");
+      start_btn.style.display = "none";
+      instruction.textContent = "Now ! make your move Champ!"
+   });
+
+
+
+
+
+
+
+
 
 
 
