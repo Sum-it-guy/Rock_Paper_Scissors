@@ -57,7 +57,7 @@ choices.addEventListener("click" ,(event)=>{
     }
 
     else{    
-        y_choice.textContent = "Paper";
+        y_choice.textContent = "Scissors";
         human_choice = 'scissors';
         play(human_choice,getComputerChoices());
     }
@@ -67,9 +67,6 @@ choices.addEventListener("click" ,(event)=>{
 
 
 //playground functon 
-
-
-
 
 function play(human,computer){
 
@@ -102,15 +99,15 @@ function play(human,computer){
 
     /* each round logic*/
     if(ComputerScore > playerScore){
-        instruction.textContent = `Computer's ${computer} > Your's ${human}`;
+        instruction.textContent = `Computer is ahead`;
     }
 
     else if(playerScore > ComputerScore){
-        instruction.textContent = `Computer's ${computer} < Your's ${human}`;
+        instruction.textContent = `You are ahead`;
     }
 
     else{
-        instruction.textContent = `Computer's ${computer} < Your's ${human}`;
+        instruction.textContent = `Tie Now`;
     }
 
     /*declaring winner*/

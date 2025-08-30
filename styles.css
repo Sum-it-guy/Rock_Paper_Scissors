@@ -6,22 +6,29 @@ html,body{
 }
 /*header*/
 #header{
+   
     display: flex;
     justify-content: center;
     align-items: center;
     padding:40px;
+    background-color: rgb(10, 211, 16);
 }
 #header div{
-    font-size: 50px;
+    color: rgb(255, 255, 255);
+    font-size: 60px;
     font-weight:900;
+    
 }
 
 /*main body*/
  /*score board*/
  #container{
-    flex:1;
+    margin-bottom:0;
     display: flex;
     flex-direction: column;
+    color:black;
+    background-color:rgb(255, 255, 255);
+   
  }
 
 #score_board{
@@ -29,26 +36,37 @@ html,body{
     padding:20px;
     justify-content: center;
     gap:300px;
-   
+    border:1px  dotted black;
+ 
 }
 
-#you,#computer {
-    max-width: 200px;
-}
 
 .y,.c{
+  
+    background-color: rgb(118, 240, 90);
+    padding:20px;
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
+    font-weight: 900;
     font-weight: 300;
+    color:white;
+    border-radius: 10px;
+    border:none;
 }
 
 .your_score,.computer_score{
+    background-color: rgb(236, 236, 236);
+    color: rgb(10, 211, 16);
     text-align: center;
     font-size:100px;
 }
 .y_choice,.c_choice{
+    margin-top:10px;
+    border-radius: 10px;
+    background-color: rgb(77, 223, 82);
+    color:white;
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
 }
 
 /*choices*/
@@ -78,10 +96,20 @@ html,body{
 }
 
 #start button{
+    border-radius: 20px;
+    color: rgb(10, 211, 16);
+    background-color: rgb(236, 236, 236);
+    padding:15px 40px;
     font-size: 40px;
     margin-right: 30px;
     margin-bottom: auto;
 }
+#start button:hover{
+   background-color: rgb(10, 211,16);
+    color:white;
+}
+
+
 
 /*instructions*/
 .instruction{
@@ -100,10 +128,39 @@ html,body{
     justify-content: center;
     padding:10px;
     margin-bottom:20px;
+    color:rgb(10, 211, 16);
 }
 
 #footer div{
     font-size:30px;
 }
 
+/*polishing now*/
+/*hovering effect on every button*/
+button{
+    border:none;
+    border-radius: 20px;
+    color: rgb(10, 211, 16);
+    background-color: rgb(236, 236, 236);
+    padding:15px 40px;
+}
+button:hover{
+    background-color: rgb(10, 211,16);
+    color:white;
+}
 
+.instruction{
+    
+    padding:30px;
+  
+     border-radius: 15px;
+}
+.instruction div{
+    display: flex;
+    justify-content: center;
+    color: rgb(10, 211,16);
+    font-size: 40px;
+    font-weight: 800;
+   
+    
+}
