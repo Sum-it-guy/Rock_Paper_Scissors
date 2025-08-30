@@ -13,6 +13,7 @@ const div_choice = document.querySelector(".div_choice");
 
 
 //setting up global values 
+
 let playerScore = 0;
 let ComputerScore = 0;
 let human_choice =null;
@@ -35,23 +36,34 @@ function getComputerChoices(){
     else{
         c_choice.textContent="Scissors";
         return "scissors";
+    } 
+}
+
+//getting human choices event delegation baby
+
+choices.addEventListener("click" ,(event)=>{
+    const target = event.target;
+
+    if(target.classList.contains('rock')){
+        y_choice.textContent = "Rock";
+        human_choice = "rock";
+        play(human_choice,getComputerChoices());
     }
-}
 
-//getting human choices 
+    else if(target.classList.contains('paper')){
+         y_choice.textContent = "Paper";
+        human_choice = 'paper';
+        play(human_choice,getComputerChoices());
+    }
 
-function get_human_choices(){
-     rock.addEventListener("click",()=>{y_choice.textContent = "Rock";
-                                            human_choice  = "rock";
-                                        });
-     paper.addEventListener("click",()=>{y_choice.textContent = "Paper";
-                                        human_choice =  "paper";
-                                      
-     });
-     scissors.addEventListener("click",()=>{y_choice.textContent = "Scissors";
-                                        human_choice = "scissors";
-     });
-}
+    else{    
+        y_choice.textContent = "Paper";
+        human_choice = 'scissors';
+        play(human_choice,getComputerChoices());
+    }
+
+});
+
 
 
 //playground functon 
@@ -61,7 +73,7 @@ function get_human_choices(){
 
 function play(human,computer){
 
-    
+    console.log(human);
 
      if(human == "rock" && computer == "paper"){
         ComputerScore++;
@@ -88,34 +100,46 @@ function play(human,computer){
         playerScore++;
     }
 
-    
+    /* each round logic*/
+    if(ComputerScore > playerScore){
+        instruction.textContent = `Computer's ${computer} > Your's ${human}`;
+    }
+
+    else if(playerScore > ComputerScore){
+        instruction.textContent = `Computer's ${computer} < Your's ${human}`;
+    }
+
+    else{
+        instruction.textContent = `Computer's ${computer} < Your's ${human}`;
+    }
+
+    /*declaring winner*/
+    if(playerScore == 5 || ComputerScore == 5){
+
+        if(playerScore > ComputerScore){
+            instruction.textContent = "You Won! Congratulation";
+        }
+
+        else if(playerScore < ComputerScore){
+            instruction.textContent = "You Loss!";
+        }
+
+        else{
+            instruction.textContent = "Tie!";
+        }
+        /*after five rounds the button will disapear*/
+        choices.classList.add("hidden");
+        const hidden = document.querySelector(".hidden");
+        hidden.style.display = "none";
+    }
 
     your_score.textContent =playerScore;
+ 
     computer_score.textContent = ComputerScore;
 
 }
 
 
-/*playing five round function*/
-
-function play_round(){
-
-    for(let i = 1;i<= 5;i++){
-       play(human_choice,getComputerChoices);
-    }
-
-    if(playerScore > ComputerScore){
-        instruction.textContent = "Congratulation \n You Win!";
-    }
-
-    else if(playerScore < ComputerScore){
-        instruction.textContent = "Oops \n You lost!"
-    }
-
-    else{
-        instruction.textContent = "Tie-Breaker";
-    }
-}
 
 /*start button : starting the game*/
    //toggeling classes
@@ -125,6 +149,13 @@ function play_round(){
       start_btn.style.display = "none";
       instruction.textContent = "Now ! make your move Champ!"
    });
+
+
+
+
+ 
+
+
 
 
 
