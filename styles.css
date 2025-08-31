@@ -70,7 +70,7 @@ html,body{
 }
 
 /*choices*/
-#choices.div_choice{
+#choices.hidden{
     display: none;
 }
 

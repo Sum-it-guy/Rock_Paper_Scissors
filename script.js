@@ -10,6 +10,7 @@ const c_choice = document.querySelector(".c_choice");
 const instruction = document.querySelector(".instruction div");
 const choices = document.querySelector("#choices");
 const div_choice = document.querySelector(".div_choice");
+const start_id = document.querySelector("#start");
 
 
 //setting up global values 
@@ -124,11 +125,50 @@ function play(human,computer){
         else{
             instruction.textContent = "Tie!";
         }
+
+
         /*after five rounds the button will disapear*/
         choices.classList.add("hidden");
-        const hidden = document.querySelector(".hidden");
-        hidden.style.display = "none";
+
+        //Play Again button append as soon as winner declared
+        const restart = document.createElement("button");
+        restart.textContent = "Play Again";
+        restart.style.background ="rgb(236,236,239)";
+        restart.style.color ="rgb(10, 211, 16)";
+        restart.style.padding = "15px 40px";
+        restart.style.borderRadius = "20px";
+        restart.classList.add("restart");
+
+        start_id.append(restart);
+    
+
+        /*Play_Again*/
+        //hovering effect
+        restart.addEventListener("mouseover",()=>{
+            restart.style.background = "rgb(10, 211, 16)";
+            restart.style.color = "rgb(236,236,239)";
+        });
+
+        restart.addEventListener("mouseout",()=>{
+            restart.style.color = "rgb(10, 211, 16)";
+            restart.style.background = "rgb(236,236,239)";
+        });
+
+    /*reset everything*/
+    restart.addEventListener("click",()=>{
+     playerScore = 0;
+     ComputerScore = 0;
+     restart.remove(); //remove it so it dosent pile up in memeory
+     restart.style.display = "none";
+     start_btn.style.display = "block";
+     your_score.textContent = 0;
+     computer_score.textContent = 0;
+     instruction.textContent = "Play again Champ!";
+    
+});
     }
+
+
 
     your_score.textContent =playerScore;
  
@@ -142,17 +182,19 @@ function play(human,computer){
    //toggeling classes
 
    start_btn.addEventListener("click",()=>{
-      choices.classList.remove("div_choice");
-      start_btn.style.display = "none";
+       start_btn.style.display = "none";
+      choices.classList.remove("hidden");
       instruction.textContent = "Now ! make your move Champ!"
    });
 
 
 
 
+
+
+
+
  
-
-
 
 
 
